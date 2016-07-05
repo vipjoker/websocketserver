@@ -22,7 +22,7 @@ public class ChatWebsocketHandler {
         Chat.broadcastMessage(username,"Hello");
 
 
-        System.out.println("connected");
+        System.out.println(username);
     }
 
 
@@ -31,13 +31,13 @@ public class ChatWebsocketHandler {
         String userName = Chat.userUserMap.get(user);
         Chat.userUserMap.remove(user);
         Chat.broadcastMessage(sender="Server",msg=userName);
-        System.out.println("Closed");
+        System.out.println(user);
     }
 
     @OnWebSocketMessage
     public void onMessage(Session user, String message){
         Chat.broadcastMessage(sender=Chat.userUserMap.get(user),msg = message);
 
-        System.out.println("message");
+        System.out.println(message);
     }
 }

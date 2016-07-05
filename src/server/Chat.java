@@ -20,7 +20,8 @@ public class Chat {
     public static Map<Session,String> userUserMap = new HashMap<>();
     public static int nextUserNumber;
     public static void main(String[] args) {
-        ipAddress("192.168.1.3");
+        ipAddress("192.168.110.150");
+//        ipAddress("192.168.1.3");
         webSocket("/chat",ChatWebsocketHandler.class);
         init();
     }
